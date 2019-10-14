@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 import rootReducer, { initialState } from "../reducers/index";
 
-var storage;
+var storage = initialState;
 
 try {
 	storage = window.localStorage.getItem("com.floatpays.state");
@@ -13,7 +13,7 @@ try {
 	storage = JSON.parse(storage);
 }
 catch (err) {
-	storage = JSON.parse(initialState);
+	storage = initialState;
 }
 
 console.log(storage);
